@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        // Sets the module system for the program
+        "module": "commonjs",
+        // Import non-ES modules as default imports.
+        "esModuleInterop": true,
+        // Target version of ECMAScript.
+        "target": "es6",
+        // In some cases where no type annotations are present, TypeScript will fall back to a type of any for a variable when it cannot infer the type.
+        "noImplicitAny": true,
+        // Search under node_modules for non-relative imports.
+        "moduleResolution": "node",
+        // Enable strictest settings like strictNullChecks & noImplicitAny.
+        "strict": true,
+        // Disallow features that require cross-file information for emit.
+        "isolatedModules": true,
+        // Enables the generation of sourcemap files
+        "sourceMap": true,
+        // .js (as well as .d.ts, .js.map, etc.) files will be emitted into this directory.
+        "outDir": "./dist",
+        // sets a base directory to resolve non-absolute module names.
+        "baseUrl": ".",
+    },
+    "include": [
+        "src/**/*.ts", "routes/user.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

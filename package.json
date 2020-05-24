@@ -1,0 +1,68 @@
+{
+  "name": "mass-email-server",
+  "version": "0.0.0",
+  "private": true,
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "src/*",
+      "views/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "scripts": {
+    "start": "ts-node dist/src/server.js",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "npm-run-all clean transpile",
+    "server": "ts-node src/server.ts",
+    "dev": "SET NODE_ENV=development && npm-run-all prebuild build start",
+    "prod": "SET NODE_ENV=production && npm-run-all prebuild build start",
+    "transpile": "tsc -p .",
+    "clean": "rimraf dist",
+    "watch:dev": "nodemon"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/dotenv": "^8.2.0",
+    "@types/errorhandler": "^1.5.0",
+    "@types/express": "^4.17.6",
+    "@types/express-jwt": "0.0.42",
+    "@types/jsonwebtoken": "^8.3.9",
+    "@types/method-override": "0.0.31",
+    "@types/mongoose": "^5.7.13",
+    "@types/mongoose-unique-validator": "^1.0.4",
+    "@types/morgan": "^1.9.0",
+    "@types/node": "^13.13.2",
+    "@types/passport": "^1.0.3",
+    "@types/passport-local": "^1.0.33",
+    "@types/slug": "^0.9.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.3",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.7",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "rimraf": "^3.0.2",
+    "slug": "^2.1.1",
+    "ts-node": "^8.9.0"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
+  }
+}
